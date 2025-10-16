@@ -1,0 +1,9 @@
+function bingo(ticket, win){
+let miniWins = 0;
+for (let [text, code] of ticket) {
+  for (let char of text) {
+    if (char.charCodeAt(0) === code) {
+      miniWins++;
+      break;}}}
+return miniWins >= win ? 'Winner!' : 'Loser!';
+}

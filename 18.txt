@@ -1,0 +1,21 @@
+const rl=require('readline')
+const iter=rl.createInterface(
+  {
+  input:process.stdin,
+  output:process.stdout
+  }
+);
+function createPhoneNumber(numbers){
+  let a=numbers.slice(0,3).join('');
+  let b=numbers.slice(3,6).join('');
+  let c=numbers.slice(6).join('');
+  return  `(${a}) ${b}-${c}`;
+}
+iter.question("Введите ваш номер через запятую",(input)=>{const numbers=input.split(',').map(Number);
+if(numbers.length!=10){
+  console.log("Ошибка ввода");
+}
+else {
+  console.log("Номер телефона:",createPhoneNumber(numbers));
+  }
+iter.close();})
